@@ -1,27 +1,15 @@
-import streamlit as st
 from pygwalker.api.streamlit import StreamlitRenderer
 import pandas as pd
+import streamlit as st
  
-st.set_page_config(page_title="PyGWalker in Streamlit", layout="wide")
-st.title("PyGWalker in Streamlit Demo")
+# Adjust the width of the Streamlit page
+st.set_page_config(
+    page_title="Use Pygwalker In Streamlit",
+    layout="wide"
+)
+# Import your data
+df = pd.read_csv("https://kanaries-app.s3.ap-northeast-1.amazonaws.com/public-datasets/bike_sharing_dc.csv")
  
-@st.cache_resource
-def get_pyg_renderer() -> StreamlitRenderer:
-    df = pd.read_csv("data.csv")
-    return StreamlitRenderer(df, spec="./gw_config.json", spec_io_mode="rw")
+pyg_app = StreamlitRenderer(df)
  
-renderer = get_pyg_renderer()
- 
-tab1, tab2, tab3 = st.tabs(["Explorer", "Data Profiling", "Charts"])
- 
-with tab1:
-    renderer.explorer()
- 
-with tab2:
-    renderer.explorer(default_tab="data")
- 
-with tab3:
-    st.subheader("Registered per Weekday")
-    renderer.chart(0)
-    st.subheader("Registered per Day")
-    renderer.chart(1)
+pyg_app.explorer()
