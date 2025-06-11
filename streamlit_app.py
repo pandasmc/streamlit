@@ -91,7 +91,7 @@ fig.update_layout(
             lon=center_lon
         ),
         pitch=0,
-        zoom=5
+        zoom=10
     )
 )
 
