@@ -15,6 +15,8 @@ import geopandas as gpd
 
 from geopy.distance import great_circle
 
+import pickle
+
 input_path_shp = "./gdf/cities.shp"
 route_gdf = gpd.read_file(input_path_shp)
 
