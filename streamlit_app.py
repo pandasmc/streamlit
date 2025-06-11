@@ -17,9 +17,6 @@ from geopy.distance import great_circle
 
 import pickle
 
-중심위도 = 35.1488562
-중심경도 = 128.0583024
-
 input_path_shp = "./gdf/cities.shp"
 route_gdf = gpd.read_file(input_path_shp)
 
