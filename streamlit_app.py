@@ -83,10 +83,16 @@ center_lon = (minx + maxx) / 2
 fig = go.Figure(data=[trace_network, trace_route]) # 네트워크 먼저, 경로 나중에 그려서 경로가 위에 보이도록
 
 fig.update_layout(
-    mapbox_style="open-street-map", # OpenStreetMap 스타일 사용
-    mapbox_zoom=12,
-    mapbox_center={"lat": center_lat, "lon": center_lon}, # 시작 노드를 중심으로 지도 이동
-    margin={"r":0,"t":0,"l":0,"b":0} # 여백 제거
+    hovermode='closest',
+    map=dict(
+        bearing=0,
+        center=go.layout.map.Center(
+            lat=center_lat,
+            lon=center_lon
+        ),
+        pitch=0,
+        zoom=5
+    )
 )
 
 st.plotly_chart(fig)
