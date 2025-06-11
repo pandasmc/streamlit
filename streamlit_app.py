@@ -85,4 +85,4 @@ fig.update_layout(
     margin={"r":0,"t":0,"l":0,"b":0} # 여백 제거
 )
 
-fig.show()
+st.plotly_chart(fig)
