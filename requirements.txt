@@ -3,6 +3,7 @@ pandas
 matplotlib
 pygwalker
 plotly
+folium
 nbformat
 networkx
 osmnx
