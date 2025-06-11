@@ -42,9 +42,9 @@ for geom in route_gdf['geometry']:
         lons.append(None) # 다음 세그먼트와 연결되지 않도록 None 추가
         lats.append(None)
 
-# Plotly Scattermapbox 트레이스 생성
+# Plotly Scattermap 트레이스 생성
 # 경로를 나타내는 선을 그립니다.
-trace_route = go.Scattermapbox(
+trace_route = go.Scattermap(
     mode="lines",
     lon=lons,
     lat=lats,
@@ -55,7 +55,7 @@ trace_route = go.Scattermapbox(
 # 배경 지도를 그리기 위해 전체 그래프의 노드와 엣지를 GeoDataFrame으로 변환
 nodes_gdf, edges_gdf = loaded_nodes_gdf_pkl, loaded_edges_gdf_pkl
 
-# Plotly Scattermapbox 트레이스 생성 (도로 네트워크)
+# Plotly Scattermap 트레이스 생성 (도로 네트워크)
 # 모든 도로를 회색으로 그립니다.
 network_lats = []
 network_lons = []
@@ -67,7 +67,7 @@ for geom in edges_gdf['geometry']:
         network_lons.append(None)
         network_lats.append(None)
 
-trace_network = go.Scattermapbox(
+trace_network = go.Scattermap(
     mode="lines",
     lon=network_lons,
     lat=network_lats,
@@ -76,12 +76,16 @@ trace_network = go.Scattermapbox(
 )
 
 # Plotly 레이아웃 설정
+minx, miny, maxx, maxy = route_gdf.total_bounds
+center_lat = (miny + maxy) / 2
+center_lon = (minx + maxx) / 2
+
 fig = go.Figure(data=[trace_network, trace_route]) # 네트워크 먼저, 경로 나중에 그려서 경로가 위에 보이도록
 
 fig.update_layout(
     mapbox_style="open-street-map", # OpenStreetMap 스타일 사용
     mapbox_zoom=12,
-    mapbox_center={"lat": 중심위도, "lon": 중심경도}, # 시작 노드를 중심으로 지도 이동
+    mapbox_center={"lat": center_lat, "lon": center_lon}, # 시작 노드를 중심으로 지도 이동
     margin={"r":0,"t":0,"l":0,"b":0} # 여백 제거
 )
 
