@@ -11,6 +11,7 @@ import plotly.graph_objects as go
 import folium
 import networkx as nx
 import osmnx as ox
+import geopandas as gpd
 
 from geopy.distance import great_circle
 
