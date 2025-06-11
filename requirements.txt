@@ -8,3 +8,5 @@ nbformat
 networkx
 osmnx
 geopy
+google-generativeai
+GitPython
