@@ -18,8 +18,8 @@ from geopy.distance import great_circle
 input_path_shp = "./gdf/cities.shp"
 route_gdf = gpd.read_file(input_path_shp)
 
-nodes_input_path_pkl = "/node_edge/nodes.pkl"
-edges_input_path_pkl = "/node_edge/edges.pkl"
+nodes_input_path_pkl = "./node_edge/nodes.pkl"
+edges_input_path_pkl = "./node_edge/edges.pkl"
 
 with open(nodes_input_path_pkl, 'rb') as f:
     loaded_nodes_gdf_pkl = pickle.load(f)
