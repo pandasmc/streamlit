@@ -17,7 +17,15 @@ from geopy.distance import great_circle
 
 input_path_shp = "./gdf/cities.shp"
 route_gdf = gpd.read_file(input_path_shp)
-route_gdf
+
+nodes_input_path_pkl = "/node_edge/nodes.pkl"
+edges_input_path_pkl = "/node_edge/edges.pkl"
+
+with open(nodes_input_path_pkl, 'rb') as f:
+    loaded_nodes_gdf_pkl = pickle.load(f)
+
+with open(edges_input_path_pkl, 'rb') as f:
+    loaded_edges_gdf_pkl = pickle.load(f)
 
 lats = []
 lons = []
@@ -40,7 +48,7 @@ trace_route = go.Scattermapbox(
 )
 
 # 배경 지도를 그리기 위해 전체 그래프의 노드와 엣지를 GeoDataFrame으로 변환
-nodes_gdf, edges_gdf = ox.graph_to_gdfs(G)
+nodes_gdf, edges_gdf = loaded_nodes_gdf_pkl, loaded_edges_gdf_pkl
 
 # Plotly Scattermapbox 트레이스 생성 (도로 네트워크)
 # 모든 도로를 회색으로 그립니다.
