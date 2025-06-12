@@ -1,0 +1,36 @@
+# .github/workflows/osm_calculation_wsl.yml
+name: streamlit on WSL Runner
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'input.json'
+
+jobs:
+  calculate_osm:
+    # WSL에 설치된 러너를 사용하도록 지정
+    # 만약 러너 설정 시 `--labels "wsl"`과 같이 라벨을 부여했다면,
+    # runs-on: [self-hosted, wsl] 또는 runs-on: wsl 로 지정할 수 있습니다.
+    runs-on: self-hosted 
+    
+    env:
+      # GitHub Secrets에 저장된 토큰
+      GITHUB_TOKEN_FOR_PUSH: ${{ secrets.COMPANY_GITHUB_PUSH_TOKEN }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python environment
+      # WSL 환경에 Python이 설치되어 있으므로, 이 단계는 환경 설정만 해줍니다.
+      id: conda
+      run: |
+        cd /home/pandas/projects/streamlit
+        conda deactivate || true
+        conda activate map
+        git pull
+        git add .
+        git commit -m "."
+        git push
