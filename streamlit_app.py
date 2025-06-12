@@ -185,9 +185,6 @@ if os.path.exists(OUTPUT_FILE):
 else:
     st.info("아직 계산 결과가 없습니다. 요청을 보내주세요.")
 
-st.write("---")
-st.info("이 앱은 Streamlit Cloud에서 GitHub 레포지토리를 통해 회사 컴퓨터와 데이터를 주고받습니다.")
-
 
 
 input_path_shp = "./gdf/cities.shp"
@@ -266,3 +263,8 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig)
+
+
+
+st.write("---")
+st.info("이 앱은 Streamlit Cloud에서 GitHub 레포지토리를 통해 회사 컴퓨터와 데이터를 주고받습니다.")
