@@ -64,7 +64,7 @@ from git import Repo # pip install GitPython
 #     right.markdown("당신은 연구자입니다.")
 
 st.set_page_config(layout="wide")
-st.title("OSMnx 원격 계산 요청 앱")
+st.title("AI 수거 플랫폼")
 
 # GitHub 레포지토리 정보 (Streamlit Secrets에서 로드)
 # Streamlit Cloud에서 이 앱이 배포된 GitHub 레포지토리의 경로를 사용합니다.
@@ -146,7 +146,7 @@ if st.button("계산 요청 및 GitHub에 푸시"):
             st.error(f"GitHub 푸시 중 일반 오류 발생: {e}")
             st.session_state['last_request_id'] = None
 
-st.header("계산 결과")
+st.header("결과")
 
 # 2. 결과 표시 (GitHub에서 결과 파일 읽기)
 # Streamlit Cloud는 GitHub 레포지토리가 업데이트될 때 자동으로 pull하고 앱을 다시 실행합니다.
