@@ -64,7 +64,7 @@ from git import Repo # pip install GitPython
 #     right.markdown("당신은 연구자입니다.")
 
 st.set_page_config(layout="wide")
-st.title("AI 수거 플랫폼")
+st.title("AI 수거 플랫폼 Test version")
 
 # GitHub 레포지토리 정보 (Streamlit Secrets에서 로드)
 # Streamlit Cloud에서 이 앱이 배포된 GitHub 레포지토리의 경로를 사용합니다.
