@@ -257,7 +257,7 @@ else: # 'request' or 'status' page
 
     concept_col1, concept_col2 = st.columns(2)
     with concept_col1:
-        st.image("https://placehold.co/600x400/97BC62/ffffff?text=사업+구상+이미지", caption="버섯 폐배지를 활용한 바이오펠릿 생산 구상", use_column_width=True)
+        st.image("https://raw.githubusercontent.com/pandasmc/pandasmc.github.io/refs/heads/main/img/%EB%AA%A9%EC%9E%AC%ED%8E%A0%EB%A6%BF.jpg", caption="버섯 폐배지를 활용한 바이오펠릿 생산 구상", use_column_width=True)
     with concept_col2:
         st.markdown(f"""
             <div style='display: flex; flex-direction: column; gap: 1.5rem;'>
