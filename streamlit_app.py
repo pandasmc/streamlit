@@ -126,7 +126,7 @@ def display_home_page():
         st.markdown(f"""
                 </div>
                 <p style="margin-top: 2rem; font-size: 0.9rem; color: #6B7280;">
-                    두레팜의 사업 구상에 대해 더 자세히 알고 싶으시면 아래로 스크롤하거나<br> 상단 메뉴 '회사소개'를 클릭해 주세요.
+                    두레팜의 사업 구상에 대해 더 자세히 알고 싶으시면 필요한 서비스를 클릭 후 아래로 스크롤해주세요.
                 </p>
             </div>
         """, unsafe_allow_html=True)
