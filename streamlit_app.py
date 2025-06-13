@@ -80,6 +80,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+
 # 페이지 상태 초기화
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
