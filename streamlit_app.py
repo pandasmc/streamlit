@@ -82,7 +82,7 @@ st.markdown("""
 # Streamlit은 로컬 파일 경로를 직접 웹에 호스팅하지 않습니다.
 # 따라서, 웹에 배포될 Streamlit 앱에서 이미지를 사용하려면, 웹에서 접근 가능한 URL을 사용해야 합니다.
 # 이 URL은 예시이며, 실제 '버섯배지 이미지.jpg' 파일을 사용하려면 해당 파일을 웹 스토리지(예: GitHub, S3 등)에 업로드하고 그 URL을 여기에 입력해야 합니다.
-hero_image_url = "https://images.unsplash.com/photo-1598634252028-91c91f1a58da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+hero_image_url = "https://raw.githubusercontent.com/pandasmc/pandasmc.github.io/refs/heads/main/img/%EB%AA%A9%EC%9E%AC%ED%8E%A0%EB%A6%BF.jpg"
 
 # HTML/CSS를 사용하여 Hero 섹션의 배경 이미지와 텍스트를 배치합니다.
 # Streamlit은 HTML 앵커(#id)를 직접적으로 지원하지 않으므로, 이 섹션으로의 직접 스크롤 링크는 동작하지 않을 수 있습니다.
